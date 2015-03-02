@@ -3,9 +3,6 @@ donut.js
 
 Simplest cross-browser (VML+SVG) donut and pie charts generator
 
-[Live example](http://jsbin.com/fuxesa/3)
-
-![Demo screenshot](http://i.imgur.com/aTPdXPh.png)
 
 ## Usage
 ```js
