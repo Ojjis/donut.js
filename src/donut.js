@@ -35,7 +35,7 @@
             }
 
             div.className = options.className || 'donut';
-            div.style.width = div.style.height = size + 'px';
+            //div.style.width = div.style.height = size + 'px';
 
             if (IE) {
                 size -= weight;
@@ -80,8 +80,15 @@
                     startAngle = -PI / 2,
                     arcRadius = r - weight / 2;
 
-                svg.setAttribute('height', size + 'px');
-                svg.setAttribute('width', size + 'px');
+                if (options.responsive) {
+                    svg.setAttribute('viewBox', '0 0 ' + size + ' ' + size);
+                    svg.setAttribute('preserveAspectRatio', 'xMidYMin slice');
+                    svg.setAttribute('height', '100%');
+                    svg.setAttribute('width', '100%');
+                } else {
+                    svg.setAttribute('height', size + 'px');
+                    svg.setAttribute('width', size + 'px');
+                }
 
                 div.appendChild(svg);
 

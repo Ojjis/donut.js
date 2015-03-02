@@ -13,6 +13,7 @@ var myDonutDiv = donut(options); // returns div with donut
 - ``data`` (Array) -- array of objects (eg ``{value: 42, name: 'some name', color: '#fff', className: 'extraClass'}``)
 - ``size`` (Number) -- diameter of donut (100 by default)
 - ``weight`` (Number) -- weight of arcs (size minus donut hole diameter) (20 by default)
+- ``responsive`` (Boolean) -- if the donut should be responsive or not (default false)
 
 ```js
 var myDonut = donut({
