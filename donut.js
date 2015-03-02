@@ -16,7 +16,7 @@
 				data = options.data || [{value: 1}],
 				weight = options.weight || 20,
 				colors = options.colors || ['#555'],
-				el = options.el,
+				el = document.getElementById(options.parent) || document.getElementsByClassName(options.parent)[0] || null,
 				r = size/2,
 				PI = M.PI,
 				sin = M.sin,
@@ -35,7 +35,7 @@
 				sum += data[ i ].value;
 			}
 			
-			div.className = 'donut';
+			div.className = options.className || 'donut';
 			div.style.width = div.style.height = size + 'px';
 			
 			if( IE ) {
@@ -54,7 +54,11 @@
 					fill.opacity = 0;
 					
 					arc.appendChild( fill );
-					
+					var classes = ['donut-arc'];
+			          	var extraClass = data[ i ].class;
+			          	if (extraClass) { 
+		          			classes.append(extraClass);
+			          	}
 					arcStyle = arc.style;
 					arcStyle.top = arcStyle.left = weight/2 + 'px';
 					arcStyle.width = arcStyle.height = size + 'px';
@@ -65,7 +69,7 @@
 						fillcolor: 'none',
 						strokeweight: weight + 'px',
 						'data-name': data[ i ].name,
-						'class': 'donut-arc'
+						'class': classes.join(' ')
 					});
 					
 					donut.data( arc, data[ i ] );
