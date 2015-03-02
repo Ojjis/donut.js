@@ -9,11 +9,10 @@ Simplest cross-browser (VML+SVG) donut and pie charts generator
 var myDonutDiv = donut(options); // returns div with donut
 ```
 ### Options
-- ``el`` (Node) -- DOM node where donut should be placed (optional)
-- ``data`` (Array) -- array of objects (eg ``{value: 42, name: 'some name'}``)
+- ``container`` (Node) -- CSS selector for parent node where donut should be placed ``[id | class]``
+- ``data`` (Array) -- array of objects (eg ``{value: 42, name: 'some name', color: '#fff', className: 'extraClass'}``)
 - ``size`` (Number) -- diameter of donut (100 by default)
 - ``weight`` (Number) -- weight of arcs (size minus donut hole diameter) (20 by default)
-- ``colors`` (Array) -- list of colors (``['#555']`` by default)
 
 ```js
 var myDonut = donut({
@@ -22,17 +21,25 @@ var myDonut = donut({
   weight: 30,
   data: [{
     value: 1,
-    name: 'A'
+    name: 'A',
+    color: '#80a8cc'
+    className: 'first'
   },{
     value: 2,
     name: 'B',
-    customData: 'Yeah'
+    customData: 'Yeah',
+    color: '#da3b3e'
+    className: 'fish'
   },{
     value: 3,
-    name: 'C'
+    name: 'C',
+    color: '#ffa921'
+    className: 'dog'
   },{
     value: 4,
-    name: 'D'
+    name: 'D',
+    color: 'red'
+    className: 'last'
   }],
   colors: [ '#80a8cc', '#da3b3e', '#ffa921', 'red' ]
 });
