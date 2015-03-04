@@ -14,12 +14,19 @@ var myDonutDiv = donut(options); // returns div with donut
 - ``size`` (Number) -- diameter of donut (100 by default)
 - ``weight`` (Number) -- weight of arcs (size minus donut hole diameter) (20 by default)
 - ``responsive`` (Boolean) -- if the donut should be responsive or not (default false)
+- ``innerContent`` (Object) -- inner content object with properties className and content were content goes into 
+the containing div with class name equal to the property 'className'
 
 ```js
 var myDonut = donut({
   el: document.getElementById( 'container' ),
   size: 150,
   weight: 30,
+  responsive: true,
+  innerContent: {
+    content: 'some text',
+    className: 'inner-text'
+  },
   data: [{
     value: 1,
     name: 'A',
@@ -47,8 +54,6 @@ var myDonut = donut({
 ```
 
 If ``options.weight === options.size/2`` then you get pie chart:
-
-![Donut](http://i.imgur.com/SzBRLVS.png)
 
 ```js
 var myDonut = donut({

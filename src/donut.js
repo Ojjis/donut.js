@@ -17,6 +17,7 @@
                 weight = options.weight || 20,
                 el = document.getElementById(options.container) || document.getElementsByClassName(options.container)[0] || null,
                 r = size / 2,
+                innerContent = options.innerContent,
                 PI = M.PI,
                 sin = M.sin,
                 cos = M.cos,
@@ -121,6 +122,14 @@
                     donut.data(arc, data[i]);
                     svg.appendChild(arc);
                 }
+            }
+
+            if (innerContent && innerContent.content) {
+                var innerClass  = innerContent.className || 'inner-text';
+                var innerTextNode = document.createElement('div');
+                innerTextNode.setAttribute("class", innerClass);
+                innerTextNode.innerHTML = innerContent.content;
+                div.appendChild(innerTextNode);
             }
 
             if (el) {
