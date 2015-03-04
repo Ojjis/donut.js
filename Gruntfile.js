@@ -15,7 +15,7 @@ module.exports = function (grunt) {
             },
             build: {
                 files: {
-                    'donut.min.js': 'src/donut.js'
+                    'donut.min.js': 'donut.js'
                 }
             }
         }
