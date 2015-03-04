@@ -48,8 +48,7 @@ var myDonut = donut({
     name: 'D',
     color: 'red'
     className: 'last'
-  }],
-  colors: [ '#80a8cc', '#da3b3e', '#ffa921', 'red' ]
+  }]
 });
 ```
 
