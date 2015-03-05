@@ -14,18 +14,18 @@ var myDonutDiv = donut(options); // returns div with donut
 - ``size`` (Number) -- diameter of donut (100 by default)
 - ``weight`` (Number) -- weight of arcs (size minus donut hole diameter) (20 by default)
 - ``responsive`` (Boolean) -- if the donut should be responsive or not (default false)
-- ``innerContent`` (Object) -- inner content object with properties className and content were content goes into 
 the containing div with class name equal to the property 'className'
+-  ``styles`` (Object) -- classes to be append to ``main`` and ``arc`` elements ``{main: 'main-class', arc: 'arc-class'}``
 
 ```js
 var myDonut = donut({
-  el: document.getElementById( 'container' ),
+  container: 'parentId' ,
   size: 150,
   weight: 30,
   responsive: true,
-  innerContent: {
-    content: 'some text',
-    className: 'inner-text'
+  styles:{
+    main: 'main-class', 
+    arc: 'arc-class'
   },
   data: [{
     value: 1,
