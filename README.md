@@ -56,7 +56,7 @@ If ``options.weight === options.size/2`` then you get pie chart:
 
 ```js
 var myDonut = donut({
-  el: document.getElementById( 'container' ),
+  container: 'parentId' ,
   size: 150,
   weight: 75, // <--
   ...
