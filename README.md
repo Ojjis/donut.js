@@ -6,7 +6,7 @@ Simplest cross-browser (VML+SVG) donut and pie charts generator
 
 ## Usage
 ```js
-var myDonutDiv = donut(options); // returns div with donut
+var myDonutDiv = Donut(options); // returns div with donut
 ```
 ### Options
 - ``container`` (Node) -- CSS selector for parent node where donut should be placed ``[id | class]``
@@ -18,7 +18,7 @@ the containing div with class name equal to the property 'className'
 -  ``styles`` (Object) -- classes to be append to ``main`` and ``arc`` elements ``{main: 'main-class', arc: 'arc-class'}``
 
 ```js
-var myDonut = donut({
+var myDonut = Donut({
   container: 'parentId' ,
   size: 150,
   weight: 30,
@@ -55,7 +55,7 @@ var myDonut = donut({
 If ``options.weight === options.size/2`` then you get pie chart:
 
 ```js
-var myDonut = donut({
+var myDonut = Donut({
   container: 'parentId' ,
   size: 150,
   weight: 75, // <--
