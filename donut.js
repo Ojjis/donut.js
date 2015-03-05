@@ -30,7 +30,7 @@
             i,
             value,
             arc,
-            arcClass,
+            arcClass = styles.arc || defaultStyles.arc,
             startAngle,
             setAttribute = function (el, o) {
                 for (var j in o) {
@@ -43,7 +43,7 @@
         }
 
         div.className = styles.main || defaultStyles.main;
-        arcClass = styles.arc || defaultStyles.arc;
+        div.id = options.id ||Math.random().toString(36).substr(2, 5);
 
         var getStyleString = function (extraClass) {
             var classes = [arcClass];
@@ -51,7 +51,7 @@
                 classes.push(extraClass);
             }
             return classes.join(' ');
-        }
+        };
 
         if (IE) {
             size -= weight;
